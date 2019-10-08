@@ -18,11 +18,6 @@ pipeline {
             steps {
                 sh 'mvn clean install -B -U -Dmaven.local.repo=/Users/Shared/Jenkins/Home/insideWorkspace/.repository' 
             }
-            post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml' 
-                }
-            }
         }
     }
 }
