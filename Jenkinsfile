@@ -1,12 +1,8 @@
 pipeline{
   stages{
-    stage('Checkout') {
-      gitClean()
-      checkout scm
-     }
-      stage('Build Maven artifact') {
+     stage('Build Maven artifact') {
         steps{
-          sh '/Users/Shared/Jenkins/Home/insideWorkspace'
+          sh 'mvn clean install -B -U -Dmaven.local.repo=/Users/Shared/Jenkins/Home/insideWorkspace/.repository'
           }
       }
   }
